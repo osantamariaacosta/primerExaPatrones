@@ -21,5 +21,13 @@ public class CartaTest {
 		Carta nuevaCarta = new Carta();
 		nuevaCarta.setValor(11);
 	}
+	
+	@Test 
+	public void cartasIguales() {
+		Carta primeraCarta = new Carta("Siete","Estrellas", 7);
+		Carta segundaCarta = new Carta("Siete", "Estrellas", 7);
+		assertTrue(primeraCarta.equals(segundaCarta));
+	}
+	
 
 }

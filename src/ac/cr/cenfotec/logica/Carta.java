@@ -88,8 +88,8 @@ public class Carta {
 	    
 	    Carta carta = (Carta) o;
 	    
-	    return Objects.equals(nombre, carta.nombre)
-	            && Objects.equals(nombre, carta.nombre);
+	    return Objects.equals(valor, carta.valor)
+	            && Objects.equals(valor, carta.valor);
 	}	
 	
 	
