@@ -122,4 +122,13 @@ public class MesaTest {
 		assertEquals(4, mesa.verificarCambio(nuevoJugador));
 	}
 	
+	@Test 
+	public void deck() 
+	{
+		Carta cartaTomada = new Carta();
+		cartaTomada = mesa.tomarCartadeck();
+		assertTrue(cartaTomada.instanciada(cartaTomada));
+		assertEquals(51 , mesa.getDeck().size());
+	}
+	
 }

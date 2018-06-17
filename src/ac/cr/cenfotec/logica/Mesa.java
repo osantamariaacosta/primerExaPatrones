@@ -6,6 +6,7 @@ public class Mesa {
 	public Repartidor repartidor = new Repartidor();
 	public ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
 	public ArrayList<Carta> naipeMesa = new ArrayList<Carta>();
+	public ArrayList<Carta> deck = new ArrayList<Carta>();
 	/**
 	 * @return the repartidor
 	 */
@@ -42,6 +43,20 @@ public class Mesa {
 	 */
 	public void setNaipeMesa(ArrayList<Carta> naipeMesa) {
 		this.naipeMesa = naipeMesa;
+	}
+	
+	
+	/**
+	 * @return the deck
+	 */
+	public ArrayList<Carta> getDeck() {
+		return deck;
+	}
+	/**
+	 * @param deck the deck to set
+	 */
+	public void setDeck(ArrayList<Carta> deck) {
+		this.deck = deck;
 	}
 	public void darCarta() 
 	{
@@ -218,7 +233,22 @@ public class Mesa {
 				
 			} 
 
-			return cantAciertos;
-		}
+		return cantAciertos;
+	}
+	
+	
+	public Carta tomarCartadeck() 
+	{
+		Carta nuevaCarta = new Carta();
+		
+		repartidor.barajarNaipe();
+		
+		deck = repartidor.getNaipe();
+		nuevaCarta = deck.get(0);
+		
+		deck.remove(0);
+		
+		return nuevaCarta;
+	}
 	
 }

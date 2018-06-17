@@ -70,6 +70,17 @@ public class Carta {
 			throw new Exception("Valor mayor a 10 no permitido");
 		}
 	}
+	
+	
+	public boolean instanciada(Carta nuevaCarta)
+	{
+		boolean instanciado = false;
+		if (nuevaCarta.getNombre() != null) 
+		{ 
+			instanciado = true; 
+		} 
+		return instanciado;
+	}
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
