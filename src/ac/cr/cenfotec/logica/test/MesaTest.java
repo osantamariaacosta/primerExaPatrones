@@ -42,10 +42,8 @@ public class MesaTest {
 	@Test 
 	public void darCarta()
 	{
-		ArrayList<Carta> naipeMesa = new ArrayList<Carta>();
-		mesa.darCarta();
-		naipeMesa = mesa.getNaipeMesa();
-		assertEquals(51, naipeMesa.size());
+
+
 	}
 	
 	@Test
@@ -86,9 +84,27 @@ public class MesaTest {
 			mesa.agregarJugador(jugador);
 		}
 		
-		mesa.darCartasRon();;
+		mesa.darCartasRon();
 		jugador = mesa.getJugadores().get(3);
 		assertEquals(7 ,  jugador.getMano().size());
-	}	
+	}
+	
+	@Test 
+	public void reiniciarMesa()
+	{
+		Jugador jugador = new Jugador();
+		ArrayList<Carta> naipeMesa = new ArrayList<Carta>();
+		
+		for(int i = 0; i < 7; i++)
+		{
+			mesa.agregarJugador(jugador);
+		}
+		mesa.darCartasRon();
+		mesa.resetearMesa();
+
+		naipeMesa = mesa.getNaipeMesa();
+		assertEquals(52, naipeMesa.size());
+		assertEquals(0, mesa.getJugadores().size());
+	}
 	
 }

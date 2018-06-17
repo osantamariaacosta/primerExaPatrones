@@ -3,7 +3,7 @@ package ac.cr.cenfotec.logica;
 import java.util.ArrayList;
 
 public class Mesa {
-	public Repartidor repartidor = new Repartidor();;
+	public Repartidor repartidor = new Repartidor();
 	public ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
 	public ArrayList<Carta> naipeMesa = new ArrayList<Carta>();
 	/**
@@ -96,7 +96,6 @@ public class Mesa {
 		int numeroMayor = 0;
 		int ganador = -1;
 		int sumatoria = 0;
-		int iteraciones = 0;
 		
 		
 		for( Jugador jugador: jugadores) {
@@ -151,9 +150,10 @@ public class Mesa {
 		darCartasRon();
 	}
 	
+	
 	public void darCartasRon() 
 	{
-		
+
 		Carta primeraCarta = new Carta();
 		Carta segundaCarta = new Carta();
 		Carta terceraCarta = new Carta();
@@ -189,6 +189,19 @@ public class Mesa {
 			jugadores.get(i).darCarta(sextaCarta);
 			jugadores.get(i).darCarta(setimaCarta);
 		}
-	}	
+	}
+	
+	
+	public void resetearMesa() 
+	{
+		Repartidor nuevoRepartidor = new Repartidor();;
+		ArrayList<Jugador> sinJugadores = new ArrayList<Jugador>();
+		
+		repartidor = nuevoRepartidor;
+		repartidor.barajarNaipe();
+		jugadores = sinJugadores;
+		naipeMesa = repartidor.getNaipe();
+		
+	}
 	
 }
