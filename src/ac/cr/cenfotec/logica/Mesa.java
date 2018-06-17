@@ -146,4 +146,49 @@ public class Mesa {
 		return hayJugadores;
 	}
 	
+	public void empezarPartidaRon() 
+	{
+		darCartasRon();
+	}
+	
+	public void darCartasRon() 
+	{
+		
+		Carta primeraCarta = new Carta();
+		Carta segundaCarta = new Carta();
+		Carta terceraCarta = new Carta();
+		Carta cuartaCarta = new Carta();
+		Carta quintaCarta = new Carta();
+		Carta sextaCarta = new Carta();
+		Carta setimaCarta = new Carta();
+		repartidor.barajarNaipe();
+		naipeMesa = repartidor.getNaipe();
+		
+		for (int i = 0; i < 1; i++)
+		{
+			primeraCarta = naipeMesa.get(0);
+			segundaCarta = naipeMesa.get(1);
+			terceraCarta = naipeMesa.get(2);
+			cuartaCarta = naipeMesa.get(3);
+			quintaCarta = naipeMesa.get(4);
+			sextaCarta = naipeMesa.get(5);
+			setimaCarta = naipeMesa.get(6);
+			naipeMesa.remove(0);
+			naipeMesa.remove(1);
+			naipeMesa.remove(2);
+			naipeMesa.remove(3);
+			naipeMesa.remove(4);
+			naipeMesa.remove(5);
+			naipeMesa.remove(6);
+			
+			jugadores.get(i).darCarta(primeraCarta);
+			jugadores.get(i).darCarta(segundaCarta);
+			jugadores.get(i).darCarta(terceraCarta);
+			jugadores.get(i).darCarta(cuartaCarta);
+			jugadores.get(i).darCarta(quintaCarta);
+			jugadores.get(i).darCarta(sextaCarta);
+			jugadores.get(i).darCarta(setimaCarta);
+		}
+	}	
+	
 }

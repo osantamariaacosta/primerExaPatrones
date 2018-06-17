@@ -76,4 +76,19 @@ public class MesaTest {
 		
 	}
 	
+	@Test
+	public void jugadoresConSieteCartas()
+	{
+		Jugador jugador = new Jugador();
+		
+		for(int i = 0; i < 7; i++)
+		{
+			mesa.agregarJugador(jugador);
+		}
+		
+		mesa.darCartasRon();;
+		jugador = mesa.getJugadores().get(3);
+		assertEquals(7 ,  jugador.getMano().size());
+	}	
+	
 }
