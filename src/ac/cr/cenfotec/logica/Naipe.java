@@ -5,11 +5,24 @@ import java.util.ArrayList;
 public class Naipe {
 	private ArrayList<Carta> naipe = new ArrayList<Carta>();
 	
-	public ArrayList<Carta> nuevoNaipe () 
-	{
-		
-		agregarPalos();
+	
+	/**
+	 * @return the naipe
+	 */
+	public ArrayList<Carta> getNaipe() {
 		return naipe;
+	}
+
+	/**
+	 * @param naipe the naipe to set
+	 */
+	public void setNaipe(ArrayList<Carta> naipe) {
+		this.naipe = naipe;
+	}
+
+	public void nuevoNaipe () 
+	{
+		agregarPalos();
 	}
 	
 	public void agregarPalos() 
@@ -57,6 +70,20 @@ public class Naipe {
 				break;
 		}
 		return palo;
+	}
+	
+	public boolean naipeListo() 
+	{
+		boolean naipeListo;
+		if(naipe == null || naipe.size() == 0)
+		{
+		  naipeListo = false;
+		}
+		else{
+		 naipeListo = true;
+		}
+		
+		return naipeListo;
 	}
 }
 
