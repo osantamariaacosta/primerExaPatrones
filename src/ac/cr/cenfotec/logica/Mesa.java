@@ -204,4 +204,21 @@ public class Mesa {
 		
 	}
 	
+	public int verificarCambio(Jugador jugador)
+	{
+		String nombreCarta = "";
+		int cantAciertos = 0;
+
+			for(int i = 0; i < jugador.getMano().size(); i++) {
+				nombreCarta = jugador.getMano().get(i).getNombre();
+				if (nombreCarta.equals("J") || nombreCarta.equals("Q") || nombreCarta.equals("K") || nombreCarta.equals("Tres"))
+				{
+					cantAciertos++;
+				}
+				
+			} 
+
+			return cantAciertos;
+		}
+	
 }
