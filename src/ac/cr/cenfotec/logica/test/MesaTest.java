@@ -131,4 +131,20 @@ public class MesaTest {
 		assertEquals(51 , mesa.getDeck().size());
 	}
 	
+	@Test 
+	public void cambiarCarta() 
+	{
+		ArrayList<Carta> mano = new ArrayList<Carta>();
+		Jugador nuevoJugador = new Jugador();
+		
+		mano.add(new Carta("J", "Estrellas", 10));
+		mano.add(new Carta("Q", "Estrellas", 10));
+
+		
+		nuevoJugador.setMano(mano);
+		Carta cartaTomada = new Carta();
+		cartaTomada = mesa.tomarCartadeck();
+		assertFalse(mesa.confirmarCambioDeCarta(cartaTomada, nuevoJugador));
+	}
+	
 }

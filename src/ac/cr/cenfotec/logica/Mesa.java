@@ -251,4 +251,27 @@ public class Mesa {
 		return nuevaCarta;
 	}
 	
+	public boolean confirmarCambioDeCarta(Carta nuevaCarta, Jugador jugador)
+	{
+		boolean cambioInvalido = false;
+		Carta primeraCartaAnterior = new Carta();
+		Carta segundaCartaAnterior = new Carta();
+		
+		primeraCartaAnterior = jugador.getMano().get(0);
+		segundaCartaAnterior = jugador.getMano().get(0);
+		
+		int numero = (int) (Math.random() * 1) + 1;
+		
+		jugador.getMano().set(numero, nuevaCarta); 
+		
+		if (nuevaCarta.getNombre().equals(primeraCartaAnterior.getNombre()) && nuevaCarta.getPalo().equals(primeraCartaAnterior.getPalo())  
+				|| nuevaCarta.getNombre().equals(segundaCartaAnterior.getNombre()) && nuevaCarta.getPalo().equals(segundaCartaAnterior.getPalo()))
+		{
+			cambioInvalido = true;
+		}
+
+		return cambioInvalido; 
+		
+	}
+	
 }
