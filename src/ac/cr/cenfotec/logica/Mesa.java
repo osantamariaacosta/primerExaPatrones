@@ -65,10 +65,35 @@ public class Mesa {
 		
 	}
 	
+	public void jugarVeintiUno()
+	{
+		darCartasATodos();	
+	}
+	
+	public void darCartasATodos() 
+	{
+		
+		Carta primeraCarta = new Carta();
+		Carta segundaCarta = new Carta();
+		repartidor.barajarNaipe();
+		naipeMesa = repartidor.getNaipe();
+		
+		for (int i = 0; i < 1; i++)
+		{
+			primeraCarta = naipeMesa.get(0);
+			segundaCarta = naipeMesa.get(1);
+			naipeMesa.remove(0);
+			naipeMesa.remove(1);
+			
+			jugadores.get(i).darCarta(primeraCarta);
+			jugadores.get(i).darCarta(segundaCarta);
+		}
+	}
+	
 	public String agregarJugador(Jugador nuevoJugador)
 	{
 		String mensaje = "";
-		if (jugadores.size() < 3) 
+		if (jugadores.size() < 4) 
 		{
 			jugadores.add(nuevoJugador);
 			mensaje = "Jugador Agregado";

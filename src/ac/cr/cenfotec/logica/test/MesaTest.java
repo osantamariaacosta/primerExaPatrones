@@ -31,7 +31,7 @@ public class MesaTest {
 	public void mesaLlena()
 	{
 		String mensaje = "La mesa está llena";
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < 4; i++)
 		{
 			mesa.agregarJugador(new Jugador());
 		}
@@ -43,10 +43,23 @@ public class MesaTest {
 	public void darCarta()
 	{
 		ArrayList<Carta> naipeMesa = new ArrayList<Carta>();
-		int number;
 		mesa.darCarta();
 		naipeMesa = mesa.getNaipeMesa();
-		number = naipeMesa.size();
-		assertEquals(51,number);
+		assertEquals(51, naipeMesa.size());
+	}
+	
+	@Test
+	public void jugadoresConDosCartas()
+	{
+		Jugador jugador = new Jugador();
+		
+		for(int i = 0; i < 4; i++)
+		{
+			mesa.agregarJugador(jugador);
+		}
+		
+		mesa.darCartasATodos();
+		jugador = mesa.getJugadores().get(3);
+		assertEquals(2 ,  jugador.getMano().size());
 	}
 }
