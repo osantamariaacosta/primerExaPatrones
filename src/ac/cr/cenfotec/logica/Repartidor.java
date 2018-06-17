@@ -28,6 +28,7 @@ public class Repartidor {
 		
 		naipe = nuevoNaipe.getNaipe();
 		
+		
         Random rndm = new Random();
         Collections.shuffle(naipe, rndm);
 	}

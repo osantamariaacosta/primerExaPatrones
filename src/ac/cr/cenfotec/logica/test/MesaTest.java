@@ -2,10 +2,12 @@ package ac.cr.cenfotec.logica.test;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Before;
 import org.junit.Test;
 
-
+import ac.cr.cenfotec.logica.Carta;
 import ac.cr.cenfotec.logica.Jugador;
 import ac.cr.cenfotec.logica.Mesa;
 
@@ -35,5 +37,16 @@ public class MesaTest {
 		}
 		
 		assertTrue(mensaje.equals(mesa.agregarJugador(new Jugador())));
+	}
+	
+	@Test 
+	public void darCarta()
+	{
+		ArrayList<Carta> naipeMesa = new ArrayList<Carta>();
+		int number;
+		mesa.darCarta();
+		naipeMesa = mesa.getNaipeMesa();
+		number = naipeMesa.size();
+		assertEquals(51,number);
 	}
 }

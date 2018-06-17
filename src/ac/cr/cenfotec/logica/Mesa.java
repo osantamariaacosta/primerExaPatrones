@@ -3,8 +3,9 @@ package ac.cr.cenfotec.logica;
 import java.util.ArrayList;
 
 public class Mesa {
-	private Repartidor repartidor;
-	private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
+	public Repartidor repartidor = new Repartidor();;
+	public ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
+	public ArrayList<Carta> naipeMesa = new ArrayList<Carta>();
 	/**
 	 * @return the repartidor
 	 */
@@ -28,6 +29,40 @@ public class Mesa {
 	 */
 	public void setJugadores(ArrayList<Jugador> jugadores) {
 		this.jugadores = jugadores;
+	}
+	
+	/**
+	 * @return the naipeMesa
+	 */
+	public ArrayList<Carta> getNaipeMesa() {
+		return naipeMesa;
+	}
+	/**
+	 * @param naipeMesa the naipeMesa to set
+	 */
+	public void setNaipeMesa(ArrayList<Carta> naipeMesa) {
+		this.naipeMesa = naipeMesa;
+	}
+	public void darCarta() 
+	{
+		
+		Carta nuevaCarta = new Carta();
+		Jugador jugadorReceptor = new Jugador();
+		
+		repartidor.barajarNaipe();
+		
+		naipeMesa = repartidor.getNaipe();
+		nuevaCarta = naipeMesa.get(0);
+		
+		naipeMesa.remove(0);
+		
+		agregarJugador(new Jugador());
+		jugadorReceptor = jugadores.get(0);
+		
+		jugadorReceptor.darCarta(nuevaCarta);
+		
+		jugadores.set(0, jugadorReceptor);
+		
 	}
 	
 	public String agregarJugador(Jugador nuevoJugador)
