@@ -7,7 +7,15 @@ public class Jugador {
 	private ArrayList<Carta> mano = new ArrayList<Carta>();
 	
 	
-	
+	public Jugador() {
+	}
+	/**
+	 * @param numero
+	 */
+	public Jugador(int numero) {
+		this.numero = numero;
+	}
+
 	/**
 	 * @return the numero
 	 */

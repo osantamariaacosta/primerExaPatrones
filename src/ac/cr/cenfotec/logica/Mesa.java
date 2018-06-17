@@ -90,6 +90,31 @@ public class Mesa {
 		}
 	}
 	
+	
+	public int calcularGanador() 
+	{
+		int numeroMayor = 0;
+		int ganador = -1;
+		int sumatoria = 0;
+		int iteraciones = 0;
+		
+		
+		for( Jugador jugador: jugadores) {
+			for(int j = 0; j < jugador.getMano().size(); j++) {
+				sumatoria += jugador.getMano().get(j).getValor();
+			} 
+			if (sumatoria > 0 && sumatoria < 21 && sumatoria > numeroMayor)
+			{
+				numeroMayor = sumatoria;
+				
+				ganador = jugador.getNumero();
+				
+			} 
+		}
+		
+		return ganador;
+	}
+	
 	public String agregarJugador(Jugador nuevoJugador)
 	{
 		String mensaje = "";

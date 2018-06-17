@@ -62,4 +62,18 @@ public class MesaTest {
 		jugador = mesa.getJugadores().get(3);
 		assertEquals(2 ,  jugador.getMano().size());
 	}
+	
+	@Test
+	public void ganadorDelJuego() 
+	{
+		
+		for(int i = 0; i < 4; i++)
+		{
+			mesa.agregarJugador(new Jugador(2));
+		}
+		mesa.darCartasATodos();
+		assertEquals(2 ,  mesa.calcularGanador());
+		
+	}
+	
 }
