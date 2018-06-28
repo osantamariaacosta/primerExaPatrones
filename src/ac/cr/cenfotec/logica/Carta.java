@@ -5,6 +5,7 @@ import java.util.Objects;
 public class Carta {
 	private String nombre;
 	private String palo;
+	// prueba commit 
 	private int valor;
 	private int limite = 10;
 	
